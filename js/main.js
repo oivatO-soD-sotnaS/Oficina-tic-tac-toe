@@ -17,7 +17,7 @@ let pontuacaoX = document.getElementById("pontuacaoX");
 let pontuacaoO = document.getElementById("pontuacaoO");
 let jogador = "X";
 
-//Inicializa o valor das pontuações
+//Inicializa o valor das pontuações puxando o valor do storage
 
 
 //Detecta o click em qualquer uma das 9 caixas do jogo
@@ -55,12 +55,10 @@ function aumentaPontuacao(vencedor){
     Esta função irá aumentar a pontuação do jogador que obtiver a vitória.
     */
     if(vencedor === "X"){
-        pontuacaoX.innerText++
-
+        //atualizar a pontuacao no storage aqui
         reset()
     }else{
-        pontuacaoO.innerText++
-        
+        //atualizar a pontuacao no storage aqui
         reset()
     }
 }
