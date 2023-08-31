@@ -44,20 +44,20 @@ p{
     color: #FBEAEB;
     background-color: #2F3C7E;
 }
-.tic-tac-toe{
+.jogo-da-velha{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 1rem;
 }
-.tic-tac-toe img{
+.jogo-da-velha img{
     opacity: 0;
 }
-.tic-tac-toe img:hover{
+.jogo-da-velha img:hover{
     opacity: .5;
 }
-.box{
+.casa{
     display: flex;
     flex-direction: column;
     justify-content: center;
