@@ -1,8 +1,8 @@
 // inicialização das variáveis utilizadas no programa
 const xColor = "#F96167";
 const oColor = "#F9E795";
-const imageX = "../images/noun-x-2126085.png";
-const imageO = "../images/noun-circle-1157067.png";
+const imagemX = "../images/imagemX.png";
+const imagemO = "../images/imagemO.png";
 const jogoDaVelha = document.querySelector(".jogo-da-velha");
 const casa0 = document.getElementById("0");
 const casa1 = document.getElementById("1");
@@ -132,13 +132,13 @@ function colocaSimbolo(id_casa){
         id_casa.dataset.marked = "X";
         id_casa.style.backgroundColor = xColor;
         id_casa.childNodes[0].style.opacity = 1;
-        mudaImagen(imageO);
+        mudaImagen(imagemO);
         jogador = "O";
     }else{
         id_casa.dataset.marked = "O";
         id_casa.style.backgroundColor = oColor;
         id_casa.childNodes[0].style.opacity = 1;
-        mudaImagen(imageX);
+        mudaImagen(imagemX);
         jogador = "X";
     }
     checarVitoria()
