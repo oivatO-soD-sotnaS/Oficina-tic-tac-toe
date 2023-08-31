@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100svh;
+    background-color: #FBEAEB;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 33vw;
+}
+.pontuacao{
+    display: flex;
+    justify-content: space-between;
+}
+.pontuacao img{
+    height: 50px;
+}
+.X, .O{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.O{
+    flex-direction: row-reverse;
+}
+p{
+    font-size: 2rem;
+}
+.jogadorX, .jogadorO{
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    font-weight: 300;
+    font-size: 2rem;
+    color: #FBEAEB;
+    background-color: #2F3C7E;
+}
+.tic-tac-toe{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.tic-tac-toe img{
+    opacity: 0;
+}
+.tic-tac-toe img:hover{
+    opacity: .5;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    width: 30%;
+    border-radius: 1rem;
+    cursor: pointer;
+    background-color: #2F3C7E;
+}
+
+.reset{
+    display: flex;
+    justify-content: center;
+}
+.reset-button{
+    padding: .5rem 1rem;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    letter-spacing: .5rem;
+    border: 2px solid #2F3C7E;
+    border-radius: 1rem;
+    background-color: #FBEAEB;
+    color: #2F3C7E;
+    cursor: pointer;
+    transition: transform .1s;
+}
+.reset-button:active{
+    transform: translateY(5px);
+}
+img{
+    user-select: none;
+    -webkit-user-drag: none;
+}
