@@ -92,3 +92,9 @@ img{
     user-select: none;
     -webkit-user-drag: none;
 }
+
+@media only screen and (max-width: 1280px){
+    .container{
+        width: 90vw;
+    }
+}
