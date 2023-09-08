@@ -57,6 +57,11 @@ p{
 .jogo-da-velha img:hover{
     opacity: .5;
 }
+.linha{
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
 .casa{
     display: flex;
     flex-direction: column;
@@ -66,11 +71,6 @@ p{
     border-radius: 1rem;
     cursor: pointer;
     background-color: #2F3C7E;
-}
-
-.reset{
-    display: flex;
-    justify-content: center;
 }
 .reset-button{
     padding: .5rem 1rem;

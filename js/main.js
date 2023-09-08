@@ -1,8 +1,8 @@
 // inicialização das variáveis utilizadas no programa
 const xColor = "#F96167";
 const oColor = "#F9E795";
-const imagemX = "../images/imagemX.png";
-const imagemO = "../images/imagemO.png";
+const imagemX = "images/imagemX.png";
+const imagemO = "images/imagemO.png";
 const jogoDaVelha = document.querySelector(".jogo-da-velha");
 const casa0 = document.getElementById("0");
 const casa1 = document.getElementById("1");
@@ -18,8 +18,12 @@ let pontuacaoO = document.getElementById("pontuacaoO");
 let jogador = "X";
 
 //Inicializa o valor das pontuações puxando o valor do storage
-
-
+if(localStorage.pontuacaoX != null){
+    pontuacaoX.innerText = localStorage.getItem("pontuacaoX") < 10 ? "0" + localStorage.getItem("pontuacaoX") : localStorage.getItem("pontuacaoX");
+}
+if(localStorage.pontuacaoO != null){
+    pontuacaoO.innerText = localStorage.getItem("pontuacaoO") < 10 ? "0" + localStorage.getItem("pontuacaoO") : localStorage.getItem("pontuacaoO");
+}
 //Detecta o click em qualquer uma das 9 caixas do jogo
 casa0.addEventListener("click", () => {
     colocaSimbolo(casa0);
@@ -56,9 +60,11 @@ function aumentaPontuacao(vencedor){
     */
     if(vencedor === "X"){
         //atualizar a pontuacao no storage aqui
+        localStorage.pontuacaoX = parseInt(pontuacaoX.innerText) + 1
         reset()
     }else{
         //atualizar a pontuacao no storage aqui
+        localStorage.pontuacaoO = parseInt(pontuacaoO.innerText) + 1
         reset()
     }
 }
@@ -70,18 +76,17 @@ function checarVitoria(){
     vitória após cada rodada para detectar os seguintes casos:
     Vitória de qualquer um dos jogadores ou empate.
     */
-    const casasJogoDaVelha = jogoDaVelha.children;
 
-    const linha1 = [casasJogoDaVelha[0].dataset.marked,casasJogoDaVelha[1].dataset.marked,casasJogoDaVelha[2].dataset.marked];
-    const linha2 = [casasJogoDaVelha[3].dataset.marked,casasJogoDaVelha[4].dataset.marked,casasJogoDaVelha[5].dataset.marked];
-    const linha3 = [casasJogoDaVelha[6].dataset.marked,casasJogoDaVelha[7].dataset.marked,casasJogoDaVelha[8].dataset.marked];
+    const linha1 = [casa0.dataset.marked,casa1.dataset.marked,casa2.dataset.marked];
+    const linha2 = [casa3.dataset.marked,casa4.dataset.marked,casa5.dataset.marked];
+    const linha3 = [casa6.dataset.marked,casa7.dataset.marked,casa8.dataset.marked];
 
-    const coluna1 = [casasJogoDaVelha[0].dataset.marked,casasJogoDaVelha[3].dataset.marked,casasJogoDaVelha[6].dataset.marked];
-    const coluna2 = [casasJogoDaVelha[1].dataset.marked,casasJogoDaVelha[4].dataset.marked,casasJogoDaVelha[7].dataset.marked];
-    const coluna3 = [casasJogoDaVelha[2].dataset.marked,casasJogoDaVelha[5].dataset.marked,casasJogoDaVelha[8].dataset.marked];
+    const coluna1 = [casa0.dataset.marked,casa3.dataset.marked,casa6.dataset.marked];
+    const coluna2 = [casa1.dataset.marked,casa4.dataset.marked,casa7.dataset.marked];
+    const coluna3 = [casa2.dataset.marked,casa5.dataset.marked,casa8.dataset.marked];
 
-    const diagonal1 = [casasJogoDaVelha[0].dataset.marked,casasJogoDaVelha[4].dataset.marked,casasJogoDaVelha[8].dataset.marked];
-    const diagonal2 = [casasJogoDaVelha[2].dataset.marked,casasJogoDaVelha[4].dataset.marked,casasJogoDaVelha[6].dataset.marked];
+    const diagonal1 = [casa0.dataset.marked,casa4.dataset.marked,casa8.dataset.marked];
+    const diagonal2 = [casa2.dataset.marked,casa4.dataset.marked,casa6.dataset.marked];
 
     if(allEqual(linha1) && linha1[0] != "false"){
         aumentaPontuacao(linha1[0]);
@@ -120,24 +125,24 @@ function checarVitoria(){
 }
 
 
-function colocaSimbolo(id_casa){
+function colocaSimbolo(casa){
     /*
     Esta função irá colocar o simbolo 
     apropriado na caixa clickada.
     */
-    if(id_casa.dataset.marked != "false"){
+    if(casa.dataset.marked != "false"){
         return;
     }
     if(jogador === "X"){
-        id_casa.dataset.marked = "X";
-        id_casa.style.backgroundColor = xColor;
-        id_casa.childNodes[0].style.opacity = 1;
+        casa.dataset.marked = jogador;
+        casa.parentElement.style.backgroundColor = xColor;
+        casa.style.opacity = 1;
         mudaImagen(imagemO);
         jogador = "O";
     }else{
-        id_casa.dataset.marked = "O";
-        id_casa.style.backgroundColor = oColor;
-        id_casa.childNodes[0].style.opacity = 1;
+        casa.dataset.marked = jogador;
+        casa.parentElement.style.backgroundColor = oColor;
+        casa.style.opacity = 1;
         mudaImagen(imagemX);
         jogador = "X";
     }
@@ -158,12 +163,12 @@ function mudaImagen(imagem){
     /*
     Está função irá trocar as imagens das caixas desmarcadas
     */
-    const casasJogoDaVelha = jogoDaVelha.children;
-    for(let index = 0 ; index < casasJogoDaVelha.length; ++index){
-        if(casasJogoDaVelha[index].dataset.marked == "false"){
-            casasJogoDaVelha[index].childNodes[0].src = imagem
+   const casas = [casa0,casa1,casa2,casa3,casa4,casa5,casa6,casa7,casa8];
+   casas.forEach( casa => {
+        if(casa.dataset.marked == "false"){
+            casa.src = imagem
         }
-    }
+   })
 }
 
 const allEqual = arr => arr.every(val => val === arr[0]);
