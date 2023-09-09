@@ -18,25 +18,25 @@ body{
     gap: 3rem;
     width: 33vw;
 }
-.pontuacao{
+.placar{
     display: flex;
     justify-content: space-between;
 }
-.pontuacao img{
+.placar img{
     height: 50px;
 }
-.X, .O{
+.pontuacaoX, .pontuacaoO{
     display: flex;
     align-items: center;
     gap: 1rem;
 }
-.O{
+.pontuacaoO{
     flex-direction: row-reverse;
 }
 p{
     font-size: 2rem;
 }
-.pontuacaoX, .pontuacaoO{
+.pontuacaoX p, .pontuacaoO p{
     padding: .5rem 1rem;
     border-radius: 1rem;
     font-weight: 300;
