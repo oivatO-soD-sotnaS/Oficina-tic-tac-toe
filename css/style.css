@@ -34,8 +34,6 @@ body{
 }
 p{
     font-size: 2rem;
-}
-.pontuacaoX p, .pontuacaoO p{
     padding: .5rem 1rem;
     border-radius: 1rem;
     font-weight: 300;
@@ -56,6 +54,10 @@ p{
 .jogo-da-velha img:hover{
     opacity: .5;
 }
+img{
+    user-select: none;
+    -webkit-user-drag: none;
+}
 .linha{
     display: flex;
     width: 100%;
@@ -73,7 +75,6 @@ p{
 }
 .reset-button{
     padding: .5rem 1rem;
-    border: none;
     outline: none;
     font-size: 28px;
     letter-spacing: .5rem;
@@ -87,11 +88,6 @@ p{
 .reset-button:active{
     transform: translateY(5px);
 }
-img{
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
 @media only screen and (max-width: 1280px){
     .container{
         width: 90vw;
