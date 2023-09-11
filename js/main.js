@@ -61,11 +61,11 @@ function aumentaPontuacao(vencedor){
     if(vencedor === "X"){
         //atualizar a pontuacao no storage aqui
         localStorage.pontuacaoX = parseInt(pontuacaoX.innerText) + 1
-        reset()
+        reload()
     }else{
         //atualizar a pontuacao no storage aqui
         localStorage.pontuacaoO = parseInt(pontuacaoO.innerText) + 1
-        reset()
+        reload()
     }
 }
 
@@ -150,14 +150,18 @@ function colocaSimbolo(casa){
 }
 
 
-function reset(){
+function reload(){
     /*
     Esta função irá resetar a partida
     para que uma nova partida se inicie.
     */
-    location.reload()
+    location.reload();
 }
 
+function reset_btn(){
+    reload();
+    localStorage.clear();
+}
 
 function mudaImagen(imagem){
     /*

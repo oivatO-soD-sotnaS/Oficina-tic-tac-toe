@@ -1,14 +1,13 @@
-*{
+*,*::after,*::before{ box-sizing: border-box; }
+
+body{
+    height: 100svh;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100svh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: #FBEAEB;
 }
 .container{
@@ -83,7 +82,7 @@ p{
     background-color: #FBEAEB;
     color: #2F3C7E;
     cursor: pointer;
-    transition: transform .1s;
+    transition: transform .3s;
 }
 .reset-button:active{
     transform: translateY(5px);
