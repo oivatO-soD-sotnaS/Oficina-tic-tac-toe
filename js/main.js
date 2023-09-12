@@ -15,7 +15,9 @@ const casa7 = document.getElementById("7");
 const casa8 = document.getElementById("8");
 let pontuacaoX = document.getElementById("pontuacaoX");
 let pontuacaoO = document.getElementById("pontuacaoO");
+let pontuacaoVelhas = document.getElementById("pontuacaoVelhas");
 let jogador = "X";
+const casasMarcadas = [];
 
 //Inicializa o valor das pontuações puxando o valor do storage
 if(localStorage.pontuacaoX != null){
@@ -24,33 +26,50 @@ if(localStorage.pontuacaoX != null){
 if(localStorage.pontuacaoO != null){
     pontuacaoO.innerText = localStorage.getItem("pontuacaoO") < 10 ? "0" + localStorage.getItem("pontuacaoO") : localStorage.getItem("pontuacaoO");
 }
+if(localStorage.pontuacaoVelhas != null){
+    pontuacaoVelhas.innerText = localStorage.getItem("pontuacaoVelhas") < 10 ? "0" + localStorage.getItem("pontuacaoVelhas") : localStorage.getItem("pontuacaoVelhas");
+}
 //Detecta o click em qualquer uma das 9 caixas do jogo
 casa0.addEventListener("click", () => {
     colocaSimbolo(casa0);
+    checarEmpate(casa0);
 });
 casa1.addEventListener("click", () => {
     colocaSimbolo(casa1);
+    checarEmpate(casa1);
 });
 casa2.addEventListener("click", () => {
     colocaSimbolo(casa2);
+    checarEmpate(casa2);
 });
 casa3.addEventListener("click", () => {
     colocaSimbolo(casa3);
+    checarEmpate(casa3);
+
 });
 casa4.addEventListener("click", () => {
     colocaSimbolo(casa4);
+    checarEmpate(casa4);
+
 });
 casa5.addEventListener("click", () => {
     colocaSimbolo(casa5);
+    checarEmpate(casa5);
+
 });
 casa6.addEventListener("click", () => {
     colocaSimbolo(casa6);
+    checarEmpate(casa6);
+
 });
 casa7.addEventListener("click", () => {
     colocaSimbolo(casa7);
+    checarEmpate(casa7);
+
 });
 casa8.addEventListener("click", () => {
     colocaSimbolo(casa8);
+    checarEmpate(casa8);
 });
 
 //Criação de todas as funções utilizadas no programa
@@ -60,12 +79,12 @@ function aumentaPontuacao(vencedor){
     */
     if(vencedor === "X"){
         //atualizar a pontuacao no storage aqui
-        localStorage.pontuacaoX = parseInt(pontuacaoX.innerText) + 1
-        reload()
+        localStorage.pontuacaoX = parseInt(pontuacaoX.innerText) + 1;
+        reload();
     }else{
         //atualizar a pontuacao no storage aqui
-        localStorage.pontuacaoO = parseInt(pontuacaoO.innerText) + 1
-        reload()
+        localStorage.pontuacaoO = parseInt(pontuacaoO.innerText) + 1;
+        reload();
     }
 }
 
@@ -124,6 +143,13 @@ function checarVitoria(){
     
 }
 
+function checarEmpate(casa){
+    casasMarcadas.push(casa)
+    if(casasMarcadas.length === 9){
+        localStorage.pontuacaoVelhas = parseInt(pontuacaoVelhas.innerText) + 1;
+        reload();
+    }
+}
 
 function colocaSimbolo(casa){
     /*
