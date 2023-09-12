@@ -1,9 +1,14 @@
-*,*::after,*::before{ box-sizing: border-box; }
-
-body{
-    height: 100svh;
+*,*::after,*::before{ 
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+:root{
+    --clr-colorX: #F96167;
+    --clr-colorO: #F9E795;
+}
+body{
+    height: 100svh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,38 +19,37 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 3rem;
+    gap: 1rem;
     width: 33vw;
 }
 .placar{
     display: flex;
     justify-content: space-between;
 }
-.placar img{
-    height: 50px;
+.placar section{
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 30%;
+    color: #000;
 }
-.pontuacaoX, .pontuacaoO{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.pontuacaoX{
+    background-color: var(--clr-colorX);
 }
 .pontuacaoO{
-    flex-direction: row-reverse;
+    background-color: var(--clr-colorO);
 }
-p{
-    font-size: 2rem;
-    padding: .5rem 1rem;
-    border-radius: 1rem;
-    font-weight: 300;
-    font-size: 2rem;
-    color: #FBEAEB;
-    background-color: #2F3C7E;
+.velhas{
+     border: 2px solid #2F3C7E;
 }
+
+.placar p,.placar h1{
+    text-align: center;
+}
+
 .jogo-da-velha{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 1rem;
 }
 .jogo-da-velha img{
@@ -60,6 +64,7 @@ img{
 }
 .linha{
     display: flex;
+    justify-content: space-around;
     width: 100%;
     gap: 1rem;
 }
