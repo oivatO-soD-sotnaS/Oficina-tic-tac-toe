@@ -4,8 +4,10 @@
     padding: 0;
 }
 :root{
-    --clr-colorX: #F96167;
-    --clr-colorO: #F9E795;
+    --clr-primary: #fbf9fe;
+    --clr-secondary: #1f2f40;
+    --clr-colorX: #812eb6;
+    --clr-colorO: #98979e;
 }
 body{
     height: 100svh;
@@ -13,7 +15,7 @@ body{
     justify-content: center;
     align-items: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: #FBEAEB;
+    background-color: var(--clr-primary);
 }
 .container{
     display: flex;
@@ -30,16 +32,19 @@ body{
     padding: 1rem;
     border-radius: 1rem;
     width: 30%;
-    color: #000;
 }
 .pontuacaoX{
+    color: var(--clr-primary);
     background-color: var(--clr-colorX);
 }
 .pontuacaoO{
+    color: var(--clr-primary);
     background-color: var(--clr-colorO);
 }
+
 .velhas{
-     border: 2px solid #2F3C7E;
+    color: var(--clr-secondary);
+    border: 2px solid var(--clr-secondary);
 }
 
 .placar p,.placar h1{
@@ -76,19 +81,18 @@ img{
     width: 30%;
     border-radius: 1rem;
     cursor: pointer;
-    background-color: #2F3C7E;
+    background-color: var(--clr-secondary);
 }
 .reset-button{
-    padding: .5rem 1rem;
-    outline: none;
+    padding: .5rem 1rem; 
     font-size: 28px;
     letter-spacing: .5rem;
-    border: 2px solid #2F3C7E;
+    border: 2px solid var(--clr-secondary);
     border-radius: 1rem;
-    background-color: #FBEAEB;
-    color: #2F3C7E;
+    background-color: var(--clr-primary);
+    color: var(--clr-secondary);
     cursor: pointer;
-    transition: transform .3s;
+    transition: all .1s;
 }
 .reset-button:active{
     transform: translateY(5px);

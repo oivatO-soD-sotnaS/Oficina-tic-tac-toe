@@ -1,6 +1,6 @@
 // inicialização das variáveis utilizadas no programa
-const xColor = "#F96167";
-const oColor = "#F9E795";
+const xColor = "#812eb6";
+const oColor = "#98979e";
 const imagemX = "images/imagemX.png";
 const imagemO = "images/imagemO.png";
 const jogoDaVelha = document.querySelector(".jogo-da-velha");
