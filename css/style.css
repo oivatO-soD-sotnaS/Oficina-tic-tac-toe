@@ -76,6 +76,7 @@ img{
 .casa{
     display: flex;
     justify-content: center;
+    align-items: center;
     aspect-ratio: 1 / 1;
     width: 30%;
     border-radius: 1rem;
@@ -97,6 +98,13 @@ img{
     transform: translateY(5px);
 }
 @media only screen and (max-width: 767px){
+    body{
+        font-size: 11px;
+    }
+    img{
+        height: 80px;
+        width: 80px;
+    }
     .container{
         width: 90vw;
     }
