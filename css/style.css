@@ -107,4 +107,7 @@ img{
     .container{
         width: 90vw;
     }
+    img{
+        pointer-events: none;
+    }
 }
