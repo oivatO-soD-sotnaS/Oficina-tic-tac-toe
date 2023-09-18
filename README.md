@@ -1,3 +1,4 @@
+![Preview do design do jogo da velha](https://github.com/oivatO-soD-sotnaS/Oficina-tic-tac-toe/blob/6d561b0ac63f6abf1e194b4f5d6aba57f135872b/Design/Preview%20do%20design.png)
 # Oficina tic tac toe
 
 Repositório para a oficina "Desbloqueando o desenvolvimento web: criando um jogo da velha", semana acadêmica 2023.
