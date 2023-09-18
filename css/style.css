@@ -57,16 +57,14 @@ body{
     gap: 1rem;
 }
 img{
-    opacity: 0;
-}
-img:hover{
-    opacity: .5;
-}
-img{
     height: 80%;
     width: 80%;
     user-select: none;
     -webkit-user-drag: none;
+    opacity: 0;
+}
+img:hover{
+    opacity: .5;
 }
 .linha{
     display: flex;
@@ -104,4 +102,4 @@ img{
     .container{
         width: 90vw;
     }
-}
+} 
